@@ -1,0 +1,21 @@
+.wrapper {
+    display:grid;
+    grid-template-columns:70% 30%;
+    /* gap between column/rows */
+    /* grid-column-gap: 1em;
+    grid-row-gap: 1em; */
+    /* same as above */
+    grid-gap: 1em;
+}
+
+
+/* all the divs on that wrapper */
+.wrapper > div{
+    background: #eee;
+    padding: 1em;
+}
+/* in all divs in wrapper class */
+/* all odd divs will be grey */
+.wrapper > div:nth-child(odd){
+    background: #ddd;
+}

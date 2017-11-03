@@ -1,0 +1,66 @@
+.wrapper {
+    display:grid;
+
+    /* fr - fractions */
+    /* think of ratio */
+    grid-template-columns: 1fr 2fr 1fr;
+
+    /* puts boxes into 100px height and width */
+    /* grid-auto-rows: 100px; auto-stretch */
+
+    grid-auto-rows: minmax(100px, auto);
+    /* leans to left */
+    /* justify-items:start; */
+
+    /* leans to right */
+    /* justify-items:end; */
+
+    /* default mode */
+    /* justify-items:stretch */
+
+    /* align-items - vertical movement - start, end, center, stretch */
+    /* align-items:stretch by default */
+}
+
+
+/* all the divs on that wrapper */
+.wrapper > div{
+    background: #eee;
+    padding: 1em;
+}
+
+/* in all divs in wrapper class */
+/* all odd divs will be grey */
+.wrapper > div:nth-child(odd){
+    background: #ddd;
+}
+
+
+.box1{
+    /* self picks individual element */
+    /* align-self:start; */
+
+    /* takes 75% of the width */
+    grid-column:1/3;
+    grid-row: 1/3;
+}
+
+.box2{
+    /* align-self:end; */
+
+    grid-column:3;
+    grid-row:1/3;
+}
+
+.box3{
+    /* justify-self:end; */
+    /* start at position 2 and go to 4 */
+    grid-column:2/4;
+    grid-row:3;
+}
+
+.box4{
+    grid-column:1;
+    grid-row:2/4;
+    border:1px solid #333;
+}
