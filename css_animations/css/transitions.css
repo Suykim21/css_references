@@ -1,0 +1,66 @@
+body {
+    background: #333;
+}
+
+.box{
+    background: white;
+    width: 300px;
+    height: 300px;
+    position:relative;
+    /* auto - gives left and right margin equally */
+    margin:0 auto;
+    top: 200px;
+
+    /* change background */
+    transition-property:background, border-radius, transform;
+
+    /* putting different timer for each elements */
+    /* first one is background, second is border-radius etc. */
+    transition-duration:1s, 2s;
+    transition-delay: 1s, 2s;
+
+    /* ease-in, ease-out, ease-in-out */
+    transition-timing-function: ease-in;
+}
+
+/* active - when clicked do animation */
+.box:hover{
+    background: red;
+    border-radius: 50%;
+    transform: rotateY(180deg);
+}
+
+/* 
+TRANSITIONAL PROPERTIES
+-Properties that have an identifiable halfway point
+
+background-color 
+background-position 
+border-color 
+border-width 
+border-spacing 
+bottom 
+color
+font-size 
+font-weight 
+height left 
+letter-spacing 
+line-height 
+margin 
+max-height 
+max-width 
+min-height 
+min-width 
+opacity 
+outline-color 
+outline-offset 
+outline-width 
+padding right 
+text-indent 
+text-shadow 
+top 
+vertical-align 
+visibility 
+width 
+word-spacing 
+z-index */
