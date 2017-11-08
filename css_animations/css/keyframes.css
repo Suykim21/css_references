@@ -1,0 +1,41 @@
+body {
+    background: #333;
+}
+
+.box{
+    background: white;
+    width: 200px;
+    height: 200px;
+    /* relative - positioned relative to its normal position */
+    position: relative;
+    /* to use keyframe */
+    animation-name: myanimation;
+    animation-duration:4s;
+    /* does animation two times */
+    animation-iteration-count: 2; /* theres also infinite */
+    /* delays animation by two seconds */
+    animation-delay: 2s;
+
+    /* does counter clockwise animation */
+    /* theres also alternate - one way and other way */
+    /* animation-direction: reverse;  */
+
+    /* linear - animate at same speed*/
+    /* ease-in - start slow end fast */
+    /* ease-out - start fast end slow */
+    /* ease-in-out - default animation */
+    animation-timing-function: ease-out;
+
+    /* forwards - keeps changed element */
+    animation-fill-mode: forwards;
+}
+
+
+/* note myanimation is from animation-name */
+@keyframes myanimation {
+    0% {background-color: white; left: 0px; top: 0px; border-radius: 0 0 0 0;}
+    25%{background-color:red; left: 300px; top: 0px; border-radius: 50% 0 0 0;}
+    50%{background-color:green; left: 300px; top: 300px; border-radius: 50% 50% 0 0;}
+    75%{background-color:blue; left: 0px; top: 300px; border-radius: 50% 50% 50% 0;}
+    100%{background-color:white; left: 0px; top: 0px; border-radius: 50% 50% 50% 50%;}
+}
