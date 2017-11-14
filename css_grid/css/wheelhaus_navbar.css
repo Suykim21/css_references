@@ -222,11 +222,13 @@ a {
 /* brand name and tagline */
 
 .boxed_logo {
-    padding: 10px 23px;
+    /* padding: 10px 23px; */
     display: inline-block;
-    border: 2px solid #00ffff;
+    /* border: 2px solid #00ffff; */
+    outline:2px solid #00ffff;
+    outline-offset: .5em;
     font-size: 1.5em;
-    margin-top: 10px;
+    margin: 2em 0;
     /* margin-bottom: 0; */
     color: white;
     font-weight: 300;
@@ -236,8 +238,12 @@ a {
 .boxed_logo:hover {
     color: #00ffff;
     ;
-    border-color: white;
+    outline-color: white;
     transition: all ease-in-out 250ms;
+}
+
+#title{
+    position:relative;
 }
 
 .logo_tagline {
@@ -245,7 +251,12 @@ a {
     color: white;
     font-weight: 300;
     font-size: .8em;
-    padding: 5px 0;
+    padding: 5px 4px;
+    position:absolute;
+    top: 71%;
+    left: 50%;
+    transform:translate(-50%, -50%);
+    background-color: #262626;
     text-transform: uppercase;
 }
 
