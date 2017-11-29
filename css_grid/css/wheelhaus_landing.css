@@ -303,6 +303,10 @@ hr {
     text-transform: uppercase;
 }
 
+#end_text img{
+    width:60px;
+}
+
 #end_text p{
     font-weight:lighter;
     font-size:1em;
