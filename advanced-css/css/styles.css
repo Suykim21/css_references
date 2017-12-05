@@ -187,6 +187,7 @@ body {
     content: "";
     /* most correspond to btn display */
     display: inline-block;
+    /* setting same dimension as btn 100px */
     height: 100%;
     width: 100%;
     border-radius: 100px;
