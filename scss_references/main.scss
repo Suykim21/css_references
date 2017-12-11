@@ -3,9 +3,112 @@
   padding: 0;
 }
 
+//sass variables
 $color-primary: #f9ed69; //yellow color
+$color-secondary: #f08a5d; //orange
+$color-tertiary: #b83b53; //pink
+$color-text-dark: #333; //grey
+$color-text-light: #eee;
+
+$width-button: 150px;
+
+//mixins are reusable piece of code
+@mixin clearfix {
+  &::after{
+    content: "";
+    clear: both;
+    display: table;
+  }
+}
+
+// passing in the argument to change color 
+@mixin style-link-text($color) {
+  text-decoration: none;
+  text-transform: uppercase;
+  color: $color;
+}
+
+// functions in sass
+@function divide($a, $b){
+  @return $a/$b;
+}
 
 nav {
-  margin: 30px;
-  background-color: $color-primary
+  margin: divide(60, 2) * 1px; //30px
+  background-color: $color-primary;
+
+  //.clearfix::after - @include adding mixin
+  @include clearfix;
+}
+
+.navigation {
+  list-style: none;
+  float: left;
+
+  //.navigation li
+  li {
+    display: inline-block;
+    margin-left: 30px;
+
+    //.navigation li:first-child
+    &:first-child {
+      margin: 0;
+    }
+
+    //.navigation li a
+    a:link {
+      //passing specific color value in mixin
+      @include style-link-text($color-text-dark);
+    }
+  }
+}
+
+.buttons {
+  float: right;
+}
+
+//extends - same as below code - do not allow customization
+%btn-placeholder {
+  padding: 10px;
+  display: inline-block;
+  text-align: center;
+  border-radius: 100px;
+  width: $width-button;
+  @include style-link-text($color-text-light);
+}
+
+/*
+.btn-main:link,
+.btn-hot:link {
+  padding: 10px;
+  display: inline-block;
+  text-align: center;
+  border-radius: 100px;
+  width: $width-button;
+  @include style-link-text($color-text-light);
+}
+*/
+
+.btn-main {
+  &:link {
+    @extend %btn-placeholder;
+    background-color: $color-secondary;
+  }
+
+  &:hover {
+    // built in sass method - get darker by 15%;
+    background-color: darken($color-secondary, 15%)
+  }
+}
+
+.btn-hot {
+  &:link {
+    @extend %btn-placeholder;
+    background-color: $color-tertiary;
+  }
+
+  &:hover {
+    // built in sass method - get lighter by 15%;
+    background-color: lighten($color-tertiary, 15%)
+  }
 }
