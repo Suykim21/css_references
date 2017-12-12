@@ -1,0 +1,31 @@
+//Sections/Headers/Footer etc.
+
+.header {
+  height: 95vh;
+  /* top left to right bottom */
+  background-image: linear-gradient(to right bottom, rgba($color-primary-light, 0.8), rgba($color-primary-dark, 0.8)), url(../img/hero.jpg);
+  background-size: cover;
+  /* top part of the picture stays the same when screen changes */
+  background-position: top;
+  /* imagine finding coordinates of the header */
+  /* top left corner, top right corner  bottom right corner bottom left corner*/
+  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+  position: relative; //.header__logo-box
+  &__logo-box {
+      position: absolute;
+      top: 4rem;
+      left: 4rem;
+  }
+  &__logo {
+      height: 3.5rem;
+  }
+  &__text-box {
+      /* referencing header */
+      position: absolute;
+      top: 40%;
+      left: 50%;
+      /* translate refers to the element */
+      transform: translate(-50%, -50%);
+      text-align: center;
+  }
+}
