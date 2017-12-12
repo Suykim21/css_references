@@ -1,0 +1,19 @@
+// Adding basic definitions of our entire project
+
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html {
+    /* 10px/16px = 62.5% */
+    /* Unlike 10px, % allow users to change view sizes - zoom in/out */
+    font-size: 62.5%;
+}
+
+body {
+    box-sizing: border-box;
+}
