@@ -2,7 +2,7 @@
 
 .btn {
   /* pseudo class */
-  
+  &,
   &:link,
   &:visited {
       text-transform: uppercase;
@@ -15,6 +15,10 @@
       transition: all .2s;
       font-size: $default-font-size;
       position: relative;
+
+      //CHANGE FOR THE <BUTTON> ELEMENT
+      border: none;
+      cursor: pointer;
   }
   
   &:hover {
@@ -31,7 +35,9 @@
       }
   }
   
-  &:active {
+  &:active,
+  &:focus {
+      outline: none;
       /* when clicked it will be at -1px */
       transform: translateY(-.1rem);
       box-shadow: 0 1rem 1rem rgba($color-black, .2);
@@ -45,6 +51,15 @@
           background-color: $color-white;
       }
   }
+
+  &--green {
+    background-color: $color-primary;
+    color: $color-white;
+
+    &::after {
+        background-color: $color-white;
+    }
+}
   
   &::after {
       content: "";
