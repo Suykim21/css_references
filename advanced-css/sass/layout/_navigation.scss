@@ -1,0 +1,170 @@
+.navigation {
+  &__checkbox {
+    display:none;
+  }
+
+  //TO BE PLACED ON TOP OF BACKGROUND IMAGE
+  &__button {
+    background-color: $color-white;
+    height: 7rem;
+    width: 7rem;
+    position: fixed;
+    top: 6rem;
+    right: 6rem;
+    border-radius: 50%;
+    z-index: 2000;
+    box-shadow: 0 1rem 3rem rgba($color-black, .1);
+    //ALIGNING THE BARS
+    text-align: center;
+    cursor: pointer;
+  }
+
+  &__background {
+    height: 6rem;
+    width: 6rem;
+    border-radius: 50%;
+    position: fixed;
+    top: 6.5rem;
+    right: 6.5rem;
+    // RADIAL GRADIENT STARTS FROM THE CENTER AND SPREADS
+    background-image: radial-gradient($color-primary-light, $color-primary-dark);
+    z-index: 1000;
+
+    // SEE EASINGS.NET FOR REFERENCE
+    transition: transform .8s cubic-bezier(0.86, 0, 0.07, 1);
+
+    // COVERING ENTIRE SCREEN WITH BACKGROUND COLOR
+    // transform: scale(100);
+  }
+
+  &__nav {
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index:1500;
+    
+    // MAKING LINKS HIDDEN
+    opacity: 0;
+    width: 0;
+    transition: all .8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+  }
+  // UL LIS A TAGS
+  &__list {
+    position:absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    list-style: none;
+    text-align: center;
+    // to prevent collapsing animation on nav width
+    width: 100%;
+  }
+  // BETWEEN LINK ELEMENTS
+  &__item {
+    // creating margins between links
+    margin: 1rem
+  }
+
+  // STYLING LINKS
+  &__link {
+    &:link,
+    &:visited{
+      // to apply padding and transform animation
+      display: inline-block;
+      font-size: 3rem;
+      font-weight: 300;
+      padding: 1rem 2rem;
+      color: $color-white;
+      text-decoration: none;
+      text-transform: uppercase;
+      // creating white animation on hover
+      background-image: linear-gradient(120deg, transparent 0%, transparent 50%, $color-white 50%);
+      // higher the percentage, itll move outside of the element
+      // starting position
+      background-size: 220%;
+      transition: all .4s;
+
+      span{
+        margin-right: 1.5rem;
+        display: inline-block;
+      }
+    }
+
+    &:hover,
+    &:active {
+      // causes sliding animation when hovered on link
+      background-position: 100%;
+      color: $color-primary;
+      transform: translateX(1rem);
+    }
+  }
+
+  // FUNCTIONALITY
+  // ~ Sibiling selector 
+  &__checkbox:checked ~ &__background {
+    transform: scale(100);
+  }
+
+  &__checkbox:checked ~ &__nav {
+    opacity: 1;
+    width: 100%;
+  }
+
+  // ICON
+  &__icon {
+    // PUTTING BARS IN THE MIDDLE OF THE BUTTON BACKGROUND(WHITE)
+    margin-top: 3.5rem;
+    position: relative;
+    // CONTRUCTING BARS
+    &,
+    &::before,
+    &::after {
+      width: 3rem;
+      height: .2rem;
+      background-color: $color-grey-dark-3;
+      display: inline-block;
+    }
+
+    // POSITIONING TOP AND BOTTOM BARS
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      // for animation effect for spreading bars and X
+      transition: all .2s;
+    }
+
+    &::before { top: -.8rem};
+    &::after { top: .8rem};
+  }
+
+  // BARS ANIMATION TO MOVE UP AND DOWN ON HOVER
+  &__button:hover &__icon::before {
+    top: -1rem;
+  }
+
+  &__button:hover &__icon::after {
+    top: 1rem;
+  }
+
+  &__checkbox:checked + &__button &__icon {
+    // making middle bar hidden on click
+    background-color: transparent;
+  }
+
+  &__checkbox:checked + &__button &__icon::before {
+    // rotating top bar
+    top: 0;
+    // 180 -45deg
+    transform: rotate(135deg);
+  }
+
+  &__checkbox:checked + &__button &__icon::after {
+    // rotating bottom bar
+    top:0;
+    transform: rotate(-135deg);
+  }
+}
