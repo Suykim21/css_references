@@ -1,137 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
     <title>Document</title>
 </head>
-<style>
-    @media(min-width:468px) {
-        .container-1 {
-            /* puts element side by side */
-            display: flex;
-
-            /*
-            align-items:flex-start;
-            align-items:flex-end;
-            align-items:center;
-            */
-            /* it puts horizontally */
-            /* flex-direction: column; 
-                flex-direction:row*/
-        }
-
-        .container-2 {
-            display: flex;
-            /* justify-content:flex-start;
-            justify-content:flex-end;
-            justify-content:center;
-            /* no margins on the side */
-            /* justify-content:space-between; */
-            /* margins on the side */
-            /* justify-content: space-around; */
-        }
-    }
-    .container-3{
-        display:flex;
-    }
-
-    .container-1 div,
-    .container-2 div,
-    .container-3 div {
-        border: 1px #ccc solid;
-        padding: 10px;
-    }
-
-    .box-1 {
-        /* changes the width */
-        flex: 2;
-        /* puts items in order */
-        order: 2;
-    }
-
-    .box-2 {
-        flex: 1;
-        order: 1;
-    }
-
-    .box-3 {
-        flex: 1;
-        order: 3;
-    }
-
-    .container-2-box {
-        /* width:27%; */
-        /* same as above */
-        flex-basis: 27%;
-    }
-
-    .container-3-box{
-        flex-basis:12%;
-        flex-wrap:wrap;
-        justify-content: space-between;
-    }
-</style>
-
 <body>
-    <div class="container-1">
-        <div class="box-1">
-            <h3>Box 1</h3>
-            <p>loremIpsum excepteur cillum reprehenderit et deserunt sit.</p>
-        </div>
-        <div class="box-2">
-            <h3>Box 2</h3>
-            <p>loremIpsum excepteur cillum reprehenderit et deserunt sit.</p>
-        </div>
-        <div class="box-3">
-            <h3>Box 3</h3>
-            <p>loremIpsum excepteur cillum reprehenderit et deserunt sit.</p>
-        </div>
-    </div>
-
-    <div class="container-2">
-        <div class="container-2-box">
-            <h3>Box 4</h3>
-            <p>loremIpsum excepteur cillum reprehenderit et deserunt sit.</p>
-        </div>
-        <div class="container-2-box">
-            <h3>Box 5</h3>
-            <p>loremIpsum excepteur cillum reprehenderit et deserunt sit.</p>
-        </div>
-        <div class="container-2-box">
-            <h3>Box 6</h3>
-            <p>loremIpsum excepteur cillum reprehenderit et deserunt sit.</p>
-        </div>
-    </div>
-
-    <div class="container-3">
-        <div class="container-3-box">
-            <h3>Box 7</h3>
-            <p>loremIpsum excepteur cillum reprehenderit et deserunt sit.</p>
-        </div>
-        <div class="container-3-box">
-            <h3>Box 8</h3>
-            <p>loremIpsum excepteur cillum reprehenderit et deserunt sit.</p>
-        </div>
-        <div class="container-3-box">
-            <h3>Box 9</h3>
-            <p>loremIpsum excepteur cillum reprehenderit et deserunt sit.</p>
-        </div>
-        <div class="container-3-box">
-            <h3>Box 10</h3>
-            <p>loremIpsum excepteur cillum reprehenderit et deserunt sit.</p>
-        </div>
-        <div class="container-3-box">
-            <h3>Box 11</h3>
-            <p>loremIpsum excepteur cillum reprehenderit et deserunt sit.</p>
-        </div>
-        <div class="container-3-box">
-            <h3>Box 12</h3>
-            <p>loremIpsum excepteur cillum reprehenderit et deserunt sit.</p>
-        </div>
+    <div class="container">
+        <div class="item">1</div>
+        <div class="item i2">2</div>
+        <div class="item i3">3</div>
+        <div class="item i4">4</div>
+        <div class="item">5</div>
+        <div class="item">6</div>
+        <div class="item">7</div>
+        <div class="item">8</div>
+        <div class="item">9</div>
+        <div class="item">10</div>
     </div>
 </body>
-
 </html>
