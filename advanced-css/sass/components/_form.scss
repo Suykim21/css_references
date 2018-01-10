@@ -18,6 +18,10 @@
     width: 90%;
     display: block;
 
+    @include respond(tab-port) {
+      width: 100%;
+    }
+
     &:focus {
       outline: none;
       box-shadow: 0 1rem 2rem rgba($color-black, .1);
@@ -59,6 +63,11 @@
     width: 49%;
     // to display radio buttons side by side
     display: inline-block;
+
+    @include respond(tab-port) {
+      width: 100%;
+      margin: 2rem;
+    }
   }
 
   &__radio-input {
